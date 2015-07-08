@@ -2,13 +2,18 @@ var express = require("express");
 var bodyParser = require("body-parser")
 var _ = require("underscore");
 
-// serve js and css files from public folder
-app.use(express.static(__dirname + '/public'));
-
 var app = express();
+
+// serve js and css files from public folder
+app.use(express.static(__dirname + '/public/scripts'));
+app.use(express.static(__dirname + '/public/styles'));
 
 // parse application/x-www-form-urlencoded 
 app.use(bodyParser.urlencoded({ extended: false }))
+
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/public/views/index.html');
+});
 
 var users = [
 	{
