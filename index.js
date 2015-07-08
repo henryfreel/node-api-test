@@ -2,6 +2,9 @@ var express = require("express");
 var bodyParser = require("body-parser")
 var _ = require("underscore");
 
+// serve js and css files from public folder
+app.use(express.static(__dirname + '/public'));
+
 var app = express();
 
 // parse application/x-www-form-urlencoded 
