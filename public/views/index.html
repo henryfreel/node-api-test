@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Seed-Jquery</title>
+    <title>Users Api</title>
 
     <!-- STYLES -->
     <!-- Bootstrap CSS -->
@@ -36,20 +36,66 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
-            Seed-Jquery
+            Users Api
           </a>
         </div>
       </div>
     </nav>
 
-    <div class='container'>
-      <h1>Start a new project with this</h1>
-      <h4>Here's what's in the box</h4>
-      <ul>
-        <li><a href="http://en.wikipedia.org/wiki/JQuery">Jquery</a>: to simplify manipulating the DOM and getting data from servers (AJAX)</li>
-        <li><a href="http://en.wikipedia.org/wiki/Bootstrap_%28front-end_framework%29">Twitter Boostrap</a>: to simplify styling and some basic UX/UI</li>
-        <li><a href="http://en.wikipedia.org/wiki/Underscore.js">Underscore.js</a>: for making Javascript awesome.</li>
-      </ul>
+    <br>
+    <br>
+
+    <div class="container">
+
+      <form class="form-inline" id="user-form">
+        <div class="form-group">
+          <label class="sr-only" for="first-name-input">First Name</label>
+          <input class="form-control" id="first-name-input" placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="last-name-input">Last Name</label>
+          <input class="form-control" id="last-name-input" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="age-input">Age</label>
+          <input class="form-control" id="age-input" placeholder="Age">
+        </div>
+        <button type="submit" class="btn btn-default" id="add-user-button">Add User</button>
+      </form>
+
+      <br>
+      <br>
+
+      <table class="table table-hover user-table">
+
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+          </tr>  
+        </thead>
+        <tbody>
+
+          <!-- template rows go here -->
+
+        </tbody>
+      
+      </table> 
     </div>
+    
+
+    <script type="text/template" id="user-template">
+
+      <tr>
+          <td><%= id %></td>
+          <td><%= firstname %></td>
+          <td><%= lastname %></td>
+          <td><%= age %></td>
+      </tr>
+
+    </script>
+
   </body>
 </html>

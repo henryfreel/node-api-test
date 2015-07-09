@@ -15,6 +15,11 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/views/index.html');
 });
 
+app.all('/*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 var users = [
 	{
 		id: 1,
@@ -105,6 +110,7 @@ app.get("/users/:id", function (req, res) {
 });
 
 app.post("/users", function (req, res) {
+	
 	var newUser = req.body;
 
 	users.push(newUser);
